@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OlympicGamesWeb", "OlympicGamesWeb\OlympicGamesWeb.csproj", "{7D175FDA-2B4A-4A7E-9987-88B06158FBBE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OlympicGames.DataAccess", "..\OlympicGames\OlympicGames.DataAccess\OlympicGames.DataAccess.csproj", "{DE1C9134-C4FD-4E55-8587-145FB48C4E8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OlympicGames.Domain", "..\OlympicGames\OlympicGames.Domain\OlympicGames.Domain.csproj", "{A5D10C76-C30A-4DF5-8E76-FC95D11E49B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{7D175FDA-2B4A-4A7E-9987-88B06158FBBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D175FDA-2B4A-4A7E-9987-88B06158FBBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D175FDA-2B4A-4A7E-9987-88B06158FBBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE1C9134-C4FD-4E55-8587-145FB48C4E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE1C9134-C4FD-4E55-8587-145FB48C4E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE1C9134-C4FD-4E55-8587-145FB48C4E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE1C9134-C4FD-4E55-8587-145FB48C4E8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5D10C76-C30A-4DF5-8E76-FC95D11E49B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5D10C76-C30A-4DF5-8E76-FC95D11E49B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5D10C76-C30A-4DF5-8E76-FC95D11E49B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5D10C76-C30A-4DF5-8E76-FC95D11E49B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
