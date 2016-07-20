@@ -1,0 +1,17 @@
+﻿@model OlympicGames.Domain.Sportsperson
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    @Html.ActionLink("Back to Sportsperson List", "Index")
+</div>
+
+<h3>@Model.Name @Model.Surname</h3>
+<p>Height: @Model.Height</p>
+<p>Weight: @Model.Weight</p>
+<p>Gender: @Model.Gender</p>
+<p>Country: @Model.Country.Name</p>

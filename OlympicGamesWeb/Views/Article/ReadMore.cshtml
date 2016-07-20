@@ -1,0 +1,13 @@
+﻿@model OlympicGames.Domain.Article
+
+@{
+    ViewBag.Title = "ReadMore";
+}
+
+<div>
+    @Html.ActionLink("Back to News List", "Index")
+</div>
+
+<h3>@Model.ArticleName</h3>
+<small>Created: @Model.Created</small>
+<p>@Model.Text</p>

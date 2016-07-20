@@ -1,0 +1,32 @@
+﻿@model OlympicGamesWeb.Models.CountryViewModel
+
+@{
+    ViewBag.Title = "AddCountry";
+}
+
+<h2>Add Country</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.ActionLink("Back to Country List", "Index")
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.Name)
+        @Html.TextBoxFor(x => x.Name)
+        @Html.ValidationMessageFor(x => x.Name)
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.CountryCode)
+        @Html.TextAreaFor(x => x.CountryCode)
+        @Html.ValidationMessageFor(x => x.CountryCode)
+    </div>
+
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+}

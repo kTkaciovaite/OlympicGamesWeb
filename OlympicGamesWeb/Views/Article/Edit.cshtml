@@ -1,0 +1,32 @@
+﻿@model OlympicGamesWeb.Models.ArticleViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Article</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.ActionLink("Back to News List", "Index")
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.ArticleName)
+        @Html.TextBoxFor(x => x.ArticleName)
+        @Html.ValidationMessageFor(x => x.ArticleName)
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.Text)
+        @Html.TextAreaFor(x => x.Text)
+        @Html.ValidationMessageFor(x => x.Text)
+    </div>
+
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+}

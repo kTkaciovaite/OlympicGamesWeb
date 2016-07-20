@@ -1,0 +1,18 @@
+﻿@model List<OlympicGames.Domain.Sportsperson>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Sportspersons</h2>
+
+<p>@Html.ActionLink("Create New", "AddSportsperson")</p>
+
+<div>
+    @foreach (var item in Model)
+    {
+        <h3>@item.Name @item.Surname</h3>
+        <span>@Html.ActionLink("Read More", "Details", new { id = item.Id })</span>
+        <span>@Html.ActionLink("Edit", "Edit", new { id = item.Id })</span>
+    }
+</div>

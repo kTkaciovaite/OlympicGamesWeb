@@ -1,11 +1,20 @@
-﻿@model OlympicGames.Domain.Article
+﻿@model List<OlympicGames.Domain.Article>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>News</h2>
+
+<p>@Html.ActionLink("Create New", "CreateNewArticle")</p>
 
 <div>
-    @Html.DisplayFor(a => a.Text);
+    @foreach (var item in Model)
+    {
+        <h3>@item.ArticleName</h3>
+        <small>Created: @item.Created</small>
+        <p>@item.Text.Substring(0, 100)...</p>
+        <span>@Html.ActionLink("Read More", "ReadMore", new { id = item.Id })</span>
+        <span>@Html.ActionLink("Edit", "Edit", new { id = item.Id })</span>
+    }
 </div>

@@ -1,0 +1,59 @@
+﻿@model OlympicGamesWeb.Models.SportspersonViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    var countryList = ViewBag.Country as List<string>;
+    var countryItems = countryList.Select(c => new SelectListItem
+    {
+        Text = c,
+        Value = c
+    });
+}
+
+<h2>Edit Sportsperson</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.ActionLink("Back to Sportsperson List", "Index")
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.Person.Name)
+        @Html.TextBoxFor(x => x.Person.Name)
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.Person.Surname)
+        @Html.TextBoxFor(x => x.Person.Surname)
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.Height)
+        @Html.TextBoxFor(x => x.Height)
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.Weight)
+        @Html.TextBoxFor(x => x.Weight)
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.Person.Gender)
+        @Html.TextBoxFor(x => x.Person.Gender)
+    </div>
+
+    <div>
+        @if (countryList != null)
+        {
+            @Html.LabelFor(x => x.Person.Country.Name)
+            @Html.DropDownListFor(x => x.Person.Country.Name, countryItems)
+        }
+    </div>
+
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+}
