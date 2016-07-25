@@ -5,9 +5,9 @@
 }
 
 <div>
-    @Html.ActionLink("Back to News List", "Index")
+    <i class="glyphicon glyphicon-chevron-left"></i> @Html.ActionLink("Back to News List", "Index")
 </div>
 
 <h3>@Model.ArticleName</h3>
-<small>Created: @Model.Created</small>
+<h6>Created: @Model.Created</h6>
 <p>@Model.Text</p>

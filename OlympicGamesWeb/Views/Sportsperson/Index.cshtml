@@ -4,15 +4,45 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Sportspersons</h2>
+<div class="container">
+    <div class="row">
+        <div class="col col-sm-3">
+            <div id="sidebar">
+                <ul class="nav nav-stacked">
+                    <li>
+                        <h3 class="highlight">
+                            Recent Updates<i class="glyphicon glyphicon-dashboard pull-right"></i>
+                        </h3>
+                    </li>
+                    <li><a href="/Article/Index">News</a></li>
+                    <li><a href="/Countries/Index">Countries</a></li>
+                    <li><a href="/Sportsperson/Index">Participants</a></li>
+                </ul>
+            </div>
+        </div>
 
-<p>@Html.ActionLink("Create New", "AddSportsperson")</p>
+        <div class="col col-sm-9">
+            <div class="panel">
+                <div class="clearfix">
+                    <h1 class="section-header pull-left">Participating Athletes</h1>
+                    <div class="pull-right text-right">
+                        <button class="btn btn-default btn-create-new">@Html.ActionLink("Add Athlete", "AddSportsperson")</button>
+                    </div>
+                </div>
 
-<div>
-    @foreach (var item in Model)
-    {
-        <h3>@item.Name @item.Surname</h3>
-        <span>@Html.ActionLink("Read More", "Details", new { id = item.Id })</span>
-        <span>@Html.ActionLink("Edit", "Edit", new { id = item.Id })</span>
-    }
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col col-sm-3">
+                            <h3 class="text-center">@item.Name<br/>@item.Surname</h3>
+                            <img src="/Images/athlete.jpg" class="country-flag"/>
+                            <button class="btn btn-default">@Html.ActionLink("Details", "Details", new {id = item.Id})</button>
+                            <button class="btn btn-default">@Html.ActionLink("Edit", "Edit", new {id = item.Id})</button>
+                        </div>
+                    }
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -12,55 +12,66 @@
     });
 }
 
-<h2>Add Sportsperson</h2>
+<h2>Add Athlete</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div>
-        @Html.ActionLink("Back to News List", "Index")
-    </div>
+    <form class="form-horizontal" action="Index.cshtml">
+        <fieldset>
+            <div class="form-group article-create-new">
+                @Html.LabelFor(x => x.Person.Name, new {@class = "col-lg-3 control-label text-right"})
+                <div class="col-lg-9">
+                    @Html.TextBoxFor(x => x.Person.Name, new {@class = "form-control short-label"})
+                    @Html.ValidationMessageFor(x => x.Person.Name)
+                </div>
+            </div>
+            <div class="form-group article-create-new">
+                @Html.LabelFor(x => x.Person.Surname, new {@class = "col-lg-3 control-label text-right"})
+                <div class="col-lg-9">
+                    @Html.TextBoxFor(x => x.Person.Surname, new {@class = "form-control short-label", @rows = "8"})
+                    @Html.ValidationMessageFor(x => x.Person.Surname)
+                </div>
+            </div>
+            <div class="form-group article-create-new">
+                @Html.LabelFor(x => x.Height, new {@class = "col-lg-3 control-label text-right"})
+                <div class="col-lg-9">
+                    @Html.TextBoxFor(x => x.Height, new {@class = "form-control short-label", @rows = "8"})
+                    @Html.ValidationMessageFor(x => x.Height)
+                </div>
+            </div>
+            <div class="form-group article-create-new">
+                @Html.LabelFor(x => x.Weight, new {@class = "col-lg-3 control-label text-right"})
+                <div class="col-lg-9">
+                    @Html.TextBoxFor(x => x.Weight, new {@class = "form-control short-label", @rows = "8"})
+                    @Html.ValidationMessageFor(x => x.Weight)
+                </div>
+            </div>
+            <div class="form-group article-create-new">
+                @Html.LabelFor(x => x.Person.Gender, new {@class = "col-lg-3 control-label text-right"})
+                <div class="col-lg-9">
+                    @Html.TextBoxFor(x => x.Person.Gender, new {@class = "form-control short-label", @rows = "8"})
+                    @Html.ValidationMessageFor(x => x.Person.Gender)
+                </div>
+            </div>
 
-    <div>
-        @Html.LabelFor(x => x.Person.Name)
-        @Html.TextBoxFor(x => x.Person.Name)
-        @Html.ValidationMessageFor(x => x.Person.Name)
-    </div>
+            @if (countryList != null)
+            {
+                <div class="form-group article-create-new">
+                    @Html.LabelFor(x => x.Person.Country.Name, new { @class = "col-lg-3 control-label text-right" })
+                    <div class="col-lg-9">
+                        @Html.DropDownListFor(x => x.Person.Country.Name, countryItems, new { @class = "form-control short-label", @rows = "8" })
+                    </div>
+                </div>
+            }
 
-    <div>
-        @Html.LabelFor(x => x.Person.Surname)
-        @Html.TextBoxFor(x => x.Person.Surname)
-        @Html.ValidationMessageFor(x => x.Person.Surname)
-    </div>
-
-    <div>
-        @Html.LabelFor(x => x.Height)
-        @Html.TextBoxFor(x => x.Height)
-        @Html.ValidationMessageFor(x => x.Height)
-    </div>
-
-    <div>
-        @Html.LabelFor(x => x.Weight)
-        @Html.TextBoxFor(x => x.Weight)
-        @Html.ValidationMessageFor(x => x.Weight)
-    </div>
-
-    <div>
-        @Html.LabelFor(x => x.Person.Gender)
-        @Html.TextBoxFor(x => x.Person.Gender)
-        @Html.ValidationMessageFor(x => x.Person.Gender)
-    </div>
-
-    <div>
-        @if (countryList != null)
-        {
-            @Html.LabelFor(x => x.Person.Country.Name)
-            @Html.DropDownListFor(x => x.Person.Country.Name, countryItems)
-        }
-    </div>
-
-    <div>
-        <button type="submit">Submit</button>
-    </div>
+            <div class="form-group">
+                <div class="col-lg-9 col-lg-offset-3">
+                    <a href="/Sportsperson" class="btn btn-default">Cancel</a>
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
 }

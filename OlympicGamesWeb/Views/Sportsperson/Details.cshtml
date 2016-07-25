@@ -4,12 +4,13 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <div>
-    @Html.ActionLink("Back to Sportsperson List", "Index")
+    <i class="glyphicon glyphicon-chevron-left"></i> @Html.ActionLink("Back to Sportsperson List", "Index")
 </div>
 
+<h2>Details</h2>
+
+<img src="/Images/athlete.jpg" class="country-flag-small"/>
 <h3>@Model.Name @Model.Surname</h3>
 <p>Height: @Model.Height</p>
 <p>Weight: @Model.Weight</p>

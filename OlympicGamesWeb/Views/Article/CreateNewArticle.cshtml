@@ -1,4 +1,5 @@
-﻿@model OlympicGamesWeb.Models.ArticleViewModel
+﻿@using OlympicGames.Domain
+@model OlympicGamesWeb.Models.ArticleViewModel
 
 @{
     ViewBag.Title = "CreateNewArticle";
@@ -10,23 +11,28 @@
 {
     @Html.AntiForgeryToken()
 
-    <div>
-        @Html.ActionLink("Back to News List", "Index")
-    </div>
-    
-    <div>
-        @Html.LabelFor(x => x.ArticleName)
-        @Html.TextBoxFor(x => x.ArticleName)
-        @Html.ValidationMessageFor(x => x.ArticleName)
-    </div>
-
-    <div>
-        @Html.LabelFor(x => x.Text)
-        @Html.TextAreaFor(x => x.Text)
-        @Html.ValidationMessageFor(x => x.Text)
-    </div>
-
-    <div>
-        <button type="submit">Submit</button>
-    </div>
+    <form class="form-horizontal" action="Index.cshtml">
+        <fieldset>
+            <div class="form-group article-create-new">
+                @Html.LabelFor(x => x.ArticleName, new {@class = "col-lg-3 control-label text-right"})
+                <div class="col-lg-9">
+                    @Html.TextBoxFor(x => x.ArticleName, new {@class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.ArticleName)
+                </div>
+            </div>
+            <div class="form-group article-create-new">
+                @Html.LabelFor(x => x.Text, new {@class = "col-lg-3 control-label text-right"})
+                <div class="col-lg-9">
+                    @Html.TextAreaFor(x => x.Text, new {@class = "form-control", @rows = "8"})
+                    @Html.ValidationMessageFor(x => x.Text)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-9 col-lg-offset-3">
+                    <a href="/Article" class="btn btn-default">Cancel</a>
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
 }

@@ -1,20 +1,45 @@
 ﻿@model List<OlympicGames.Domain.Article>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "London Olympics";
 }
 
-<h2>News</h2>
-
-<p>@Html.ActionLink("Create New", "CreateNewArticle")</p>
-
-<div>
-    @foreach (var item in Model)
-    {
-        <h3>@item.ArticleName</h3>
-        <small>Created: @item.Created</small>
-        <p>@item.Text.Substring(0, 100)...</p>
-        <span>@Html.ActionLink("Read More", "ReadMore", new { id = item.Id })</span>
-        <span>@Html.ActionLink("Edit", "Edit", new { id = item.Id })</span>
-    }
+<div class="container">
+    <div class="row">
+        <div class="col col-sm-3">
+            <div id="sidebar">
+                <ul class="nav nav-stacked">
+                    <li>
+                        <h3 class="highlight">Recent Updates<i class="glyphicon glyphicon-dashboard pull-right"></i>
+                        </h3>
+                    </li>
+                    <li><a href="/Article/Index">News</a></li>
+                    <li><a href="/Countries/Index">Countries</a></li>
+                    <li><a href="/Sportsperson/Index">Participants</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col col-sm-9">
+            <div class="panel">
+                <div class="clearfix">
+                    <h1 class="section-header pull-left">The Top Stories</h1>
+                    <div class="pull-right text-right">
+                        <button class="btn btn-default btn-create-new">@Html.ActionLink("Create New", "CreateNewArticle")</button>
+                    </div>
+                </div>
+                @foreach (var item in Model)
+                {
+                    <div class="row">
+                        <img src="/Images/article-img.jpg" alt="News photo" class="img-responsive"/>
+                        <h2>@item.ArticleName</h2>
+                        <h6>@item.Created</h6>
+                        <p>@item.Text.Substring(0, 600)...</p><br><br>
+                        <button class="btn btn-default">@Html.ActionLink("Read More", "ReadMore", new {id = item.Id})</button>
+                        <button class="btn btn-default">@Html.ActionLink("Edit", "Edit", new {id = item.Id})</button>
+                        <hr>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 </div>

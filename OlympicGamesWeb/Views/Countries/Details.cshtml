@@ -4,11 +4,13 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <div>
-    @Html.ActionLink("Back to Country List", "Index")
+    <i class="glyphicon glyphicon-chevron-left"></i> @Html.ActionLink("Back to Country List", "Index")
 </div>
 
+<h2>Details</h2>
+
+<img src="/Images/flag.png" class="country-flag-small"/>
+
 <h3>@Model.Name</h3>
-<p>@Model.CountryCode</p>
+<p>Country Code: @Model.CountryCode</p>

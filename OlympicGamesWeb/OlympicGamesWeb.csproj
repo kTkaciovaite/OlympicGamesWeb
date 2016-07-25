@@ -127,9 +127,20 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap1.css" />
+    <Content Include="Content\bootstrap1.min.css" />
+    <Content Include="Content\unusedSite1.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\article-img.jpg" />
+    <Content Include="Images\athlete.jpg" />
+    <Content Include="Images\flag.png" />
+    <Content Include="Images\Header\olympics1.jpg" />
+    <Content Include="Images\Header\olympics2.jpg" />
+    <Content Include="Images\Header\olympics3.jpg" />
+    <Content Include="Images\Header\olympics4.jpg" />
+    <Content Include="Images\olympics_logo.png" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\bootstrap.js" />

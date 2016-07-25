@@ -4,37 +4,88 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css"/>
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-static">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Article", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
+            <a class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </a>
+            <div class="nav-collapse collase">
                 <ul class="nav navbar-nav">
+                    <li><a href="/Article/Index">Recent News</a></li>
+                    <li><a href="/Countries/Index">Countries</a></li>
+                    <li><a href="/Sportsperson/Index">Participants</a></li>
+                </ul>
+                <ul class="nav navbar-right navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+                        <ul class="dropdown-menu" style="padding:12px;">
+                            <form class="form-inline">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <div class="input-group-btn">
+                                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Profile</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">About</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
-    </div>
+</nav><!-- /.navbar -->
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    <header class="masthead">
+        <div class="container">
+            <div class="row">
+                <div class="col col-sm-6">
+                    <h1>
+                        <a href="/Article/Index">2016 Summer Olympics</a>
+                        <p class="lead"><em>um mundo novo</em></p>
+                    </h1>
+                </div>
+                <div class="col col-sm-6">
+                    <div class="well pull-right">
+                        <img class="logo" src="Images/olympics_logo.png">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+        <div class="container">
+            <div class="row">
+                <div class="col col-sm-12">
+                    <img class="header-img" src="/Images/Header/olympics1.jpg"/>
+                    <img class="header-img" src="/Images/Header/olympics2.jpg"/>
+                    <img class="header-img" src="/Images/Header/olympics4.jpg"/>
+                    <img class="header-img" src="/Images/Header/olympics3.jpg"/>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<div class="container body-content">
+    @RenderBody()
+    <hr/>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
