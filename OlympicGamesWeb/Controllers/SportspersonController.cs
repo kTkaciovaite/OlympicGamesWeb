@@ -14,7 +14,7 @@ namespace OlympicGamesWeb.Controllers
             var sportspersons = new SportspersonDataService();
             var sportspersonsList = sportspersons.GetAll();
 
-            return View(sportspersonsList);
+            return View("IndexCopy", sportspersonsList);
         }
 
         public ActionResult AddSportsperson()

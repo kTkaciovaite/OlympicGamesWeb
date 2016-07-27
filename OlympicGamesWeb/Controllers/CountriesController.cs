@@ -13,7 +13,7 @@ namespace OlympicGamesWeb.Controllers
             var countries = new CountryDataService();
             var countriesList = countries.GetAll();
 
-            return View(countriesList);
+            return View("IndexCopy", countriesList);
         }
 
         public ActionResult AddCountry()

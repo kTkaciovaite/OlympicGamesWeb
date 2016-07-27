@@ -2,8 +2,6 @@
 using System.Diagnostics;
 using System.Web.Mvc;
 using System.Web.Routing;
-using OlympicGames.DataAccess;
-using OlympicGames.Domain;
 
 namespace OlympicGamesWeb.Filters
 {

@@ -1,0 +1,48 @@
+﻿<div ng-app="countryApp" ng-controller="countriesListController as vm">
+    <div class="container">
+        <div class="row">
+            <div class="col col-sm-3">
+                <div id="sidebar">
+                    <ul class="nav nav-stacked">
+                        <li>
+                            <h3 class="highlight">
+                                Recent Updates<i class="glyphicon glyphicon-dashboard pull-right"></i>
+                            </h3>
+                        </li>
+                        <li><a href="/Article/Index">News</a></li>
+                        <li><a href="/Countries/Index">Countries</a></li>
+                        <li><a href="/Sportsperson/Index">Participants</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col col-sm-9">
+                <div class="panel">
+                    <div class="clearfix">
+                        <h1 class="section-header pull-left">Participating Countries</h1>
+                        <div class="pull-right text-right">
+                            <a class="btn btn-default btn-create-new" href="/Countries/AddCountry">Add Country</a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col col-sm-3" ng-repeat="country in vm.countries">
+                            <h3 class="text-center">{{ country.Name }}</h3>
+                            <img src="/Images/flag.png" class="country-flag"/>
+                            <a class="btn btn-default" href="/Countries/Details/{{ country.Id }}">Details</a>
+                            <a class="btn btn-default" href="/Countries/Detaisl/{{ country.Id }}">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.5.8/angular-resource.min.js"></script>
+
+    <script type="text/javascript" src="~/scripts/countries-list.controller.js"></script>
+    <script type="text/javascript" src="~/scripts/countries-angular.js"></script>
+}

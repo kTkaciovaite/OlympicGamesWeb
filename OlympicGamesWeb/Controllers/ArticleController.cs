@@ -15,8 +15,8 @@ namespace OlympicGamesWeb.Controllers
         {
             var news = new ArticleDataService();
             var newsList = news.GetAll();
-            
-            return View(newsList);
+
+            return View("IndexCopy", newsList);
         }
 
         public ActionResult CreateNewArticle()
@@ -47,9 +47,14 @@ namespace OlympicGamesWeb.Controllers
 
         public ActionResult ReadMore(int id)
         {
-            var articleService = new ArticleDataService();
-            
-            return View(articleService.Get(id));
+            //var articleService = new ArticleDataService();
+
+            //var model = articleService.Get(id);
+
+            //if (model == null)
+            //    return HttpNotFound();
+
+            return View(/*model*/);
         }
 
         public ActionResult Edit(int id)
@@ -58,7 +63,7 @@ namespace OlympicGamesWeb.Controllers
             var article = articleService.Get(id);
             var model = ArticleViewModel.MapFrom(article);
 
-            return View(model);
+            return View(/*model*/);
         }
 
         [HttpPost]

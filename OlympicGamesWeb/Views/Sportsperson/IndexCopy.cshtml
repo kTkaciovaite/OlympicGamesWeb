@@ -1,0 +1,64 @@
+﻿<div ng-app="sportspersonApp" ng-controller="sportspersonsListController as vm">
+    <div class="container">
+        <div class="row">
+            <div class="col col-sm-3">
+                <div id="sidebar">
+                    <ul class="nav nav-stacked">
+                        <li>
+                            <h3 class="highlight">
+                                Recent Updates<i class="glyphicon glyphicon-dashboard pull-right"></i>
+                            </h3>
+                        </li>
+                        <li><a href="/Article/Index">News</a></li>
+                        <li><a href="/Countries/Index">Countries</a></li>
+                        <li><a href="/Sportsperson/Index">Participants</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col col-sm-9">
+                <div class="panel">
+                    <div class="clearfix">
+                        <h1 class="section-header pull-left">Participating Athletes</h1>
+                        <div class="pull-right text-right">
+                            <a class="btn btn-default btn-create-new" href="/Sportsperson/AddSportsperson">Add Athlete</a>
+                        </div>
+                    </div>
+
+                    @*<div class="row">
+                        <div ng-repeat="sportsperson in vm.sportspersons">
+                            <div class="col col-sm-3">
+                                <h3 class="text-center">{{ sportsperson.Name }}</h3>
+                                <h3 class="text-center">{{ sportsperson.Surname }}</h3>
+                                <img src="/Images/athlete.jpg" class="country-flag"/>
+                                <a class="btn btn-default" href="/Sportsperson/Details/{{ sportsperson.Id }}">Details</a>
+                                <a class="btn btn-default" href="/Sportsperson/Edit/{{ sportsperson.Id }}"></a>
+                            </div>
+                        </div>
+                    </div>*@
+
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col col-sm-3">
+                                <h3 class="text-center">@item.Name<br/>@item.Surname</h3>
+                                <img src="/Images/athlete.jpg" class="country-flag"/>
+                                <button class="btn btn-default">@Html.ActionLink("Details", "Details", new {id = item.Id})</button>
+                                <button class="btn btn-default">@Html.ActionLink("Edit", "Edit", new {id = item.Id})</button>
+                            </div>
+                        }
+                        <br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.5.8/angular-resource.min.js"></script>
+
+    <script type="text/javascript" src="~/scripts/sportspersons-list.controller.js"></script>
+    <script type="text/javascript" src="~/scripts/sportspersons-angular.js"></script>
+}

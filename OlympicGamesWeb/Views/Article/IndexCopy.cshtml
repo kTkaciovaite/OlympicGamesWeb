@@ -1,0 +1,48 @@
+﻿<div ng-app="articleApp" ng-controller="articlesListController as vm">
+    <div class="container">
+        <div class="row">
+            <div class="col col-sm-3">
+                <div id="sidebar">
+                    <ul class="nav nav-stacked">
+                        <li>
+                            <h3 class="highlight">
+                                Recent Updates<i class="glyphicon glyphicon-dashboard pull-right"></i>
+                            </h3>
+                        </li>
+                        <li><a href="/Article/Index">News</a></li>
+                        <li><a href="/Countries/Index">Countries</a></li>
+                        <li><a href="/Sportsperson/Index">Participants</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col col-sm-9">
+                <div class="panel">
+                    <div class="clearfix">
+                        <h1 class="section-header pull-left">The Top Stories</h1>
+                        <div class="pull-right text-right">
+                            <a class="btn btn-default btn-create-new" href="/Article/CreateNewArticle">Create New</a>
+                        </div>
+                    </div>
+
+                    <div class="row" ng-repeat="article in vm.articles">
+                        <img src="/Images/article-img.jpg" alt="News photo" class="img-responsive"/>
+                        <h2>{{ article.ArticleName }}</h2>
+                        <h6>{{ article.Created }}</h6>
+                        <p>{{ article.Text | limitTo: 600 }}{{ article.Text.length > 600 ? '...' : '' }}</p>
+                        <a class="btn btn-default" href="/Article/ReadMore/{{article.Id}}">Read More</a>
+                        <a class="btn btn-default" href="/Article/Edit/{{article.Id}}">Edit</a>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.5.8/angular-resource.min.js"></script>
+
+    <script type="text/javascript" src="~/scripts/articles-list.controller.js"></script>
+    <script type="text/javascript" src="~/scripts/articles-angular.js"></script>
+}

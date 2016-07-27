@@ -1,6 +1,23 @@
-﻿@model OlympicGames.Domain.Article
+﻿<div ng-app="articleApp" ng-controller="articlesListController as vm">
+    <div>
+        <i class="glyphicon glyphicon-chevron-left"></i>
+        <a href="/Article">Back to News List</a>
+    </div>
 
-@{
+    <h3>{{ vm.ArticleName }}</h3>
+    <h6>Created: {{ vm.Created }}</h6>
+    <p>{{ vm.Text }}</p>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.5.8/angular-resource.min.js"></script>
+
+    <script type="text/javascript" src="~/scripts/articles-list.controller.js"></script>
+    <script type="text/javascript" src="~/scripts/articles-angular.js"></script>
+}
+
+@*@{
     ViewBag.Title = "ReadMore";
 }
 
@@ -10,4 +27,4 @@
 
 <h3>@Model.ArticleName</h3>
 <h6>Created: @Model.Created</h6>
-<p>@Model.Text</p>
+<p>@Model.Text</p>*@
